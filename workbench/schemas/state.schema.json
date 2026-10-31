@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:business-reasoning:state:v1",
+  "title": "经营案例当前状态",
+  "description": "结构验证不能代替来源存在性、逐字引文和真实用户身份检查。运行时保留历史：旧对象ID、text和已有引用不能删除或改写；修订主张须新增ID，将旧项标为superseded。该规则同样适用于facts、hypotheses、tests、decisions和gaps。",
+  "type": "object",
+  "required": [
+    "facts",
+    "hypotheses",
+    "tests",
+    "decisions",
+    "gaps",
+    "selected_methods",
+    "context"
+  ],
+  "properties": {
+    "context": {
+      "type": "object"
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "evidence_refs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "reported",
+              "supported",
+              "contested",
+              "refuted",
+              "superseded"
+            ]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/evidence_ref"
+            }
+          }
+        }
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "supporting_refs",
+          "counter_refs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "open",
+              "supported",
+              "contested",
+              "rejected",
+              "superseded"
+            ]
+          },
+          "supporting_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/evidence_ref"
+            }
+          },
+          "counter_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/evidence_ref"
+            }
+          },
+          "method_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "attribution_strength": {
+            "enum": [
+              "unassessed",
+              "association",
+              "mechanism_supported",
+              "causal_evidence"
+            ]
+          },
+          "priority": {
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "unranked"
+            ]
+          }
+        }
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    },
+    "selected_methods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "evidence_ref": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id",
+        "quote"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "message",
+            "source"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "action": {
+      "type": "object",
+      "required": [
+        "id",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

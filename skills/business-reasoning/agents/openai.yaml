@@ -1,0 +1,4 @@
+interface:
+  display_name: "经营归因助手"
+  short_description: "围绕经营问题检索方法、比较解释、追踪支持与反证，并推动验证和复盘"
+  default_prompt: "用 $business-reasoning 分析我遇到的经营现象，结合已有资料比较可能原因，提出验证步骤。"

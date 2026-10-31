@@ -1,0 +1,580 @@
+{
+  "schema_version": "1.0",
+  "records": [
+    {
+      "id": "GEN:DRIVER-TREE",
+      "title": "经营指标驱动树",
+      "body": {
+        "summary": "将总量拆到可观察的驱动项，定位变化发生在哪里。",
+        "inputs": [
+          "指标定义与同口径数据"
+        ],
+        "steps": [
+          "定义指标、周期、对象与去重口径。",
+          "构建可核对的恒等分解或组成关系。",
+          "比较分支变化与贡献，寻找需要解释的异常。"
+        ],
+        "outputs": [
+          "驱动树",
+          "变化贡献与待证解释"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:driver-tree"
+      ],
+      "limitations": [
+        "只有定义衔接时才能相乘；分解式本身不证明因果。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "growth-funnel",
+        "regional-diagnosis",
+        "metrics-review"
+      ],
+      "method_type_ids": [
+        "metric-decomposition"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:COHORT",
+      "title": "同批客户队列比较",
+      "body": {
+        "summary": "按进入时间分组并统一观察窗口，避免客户结构变化掩盖留存变化。",
+        "inputs": [
+          "客户事件时间与标识",
+          "观察窗口"
+        ],
+        "steps": [
+          "定义进入事件、客户唯一键和结果事件。",
+          "使用相同观察时长比较各批客户。",
+          "检查渠道与客群结构，再提出机制解释。"
+        ],
+        "outputs": [
+          "队列对照表",
+          "留存或复购的解释候选"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:cohort"
+      ],
+      "limitations": [
+        "未走完窗口的队列不可与完整队列直接比较；仍需检查选择偏差。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "customer-membership",
+        "growth-funnel"
+      ],
+      "method_type_ids": [
+        "segmentation-comparison"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:ISSUE-TREE",
+      "title": "竞争解释树",
+      "body": {
+        "summary": "把一个经营现象展开为能相互区分、可被证据推翻的解释。",
+        "inputs": [
+          "现象时间线",
+          "当前证据"
+        ],
+        "steps": [
+          "区分现象、目标决定与用户初始猜测。",
+          "列出不同机制解释，记录每项的预期可观察结果。",
+          "寻找反证以及能区分解释的新信息。"
+        ],
+        "outputs": [
+          "假设与支持/反证表",
+          "优先验证项"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:issue-tree"
+      ],
+      "limitations": [
+        "树状分支是分析假设，不能因画成结构图就视为完整原因。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "regional-diagnosis",
+        "growth-funnel",
+        "store-execution"
+      ],
+      "method_type_ids": [
+        "hypothesis-testing",
+        "relationship-mapping"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:PROCESS",
+      "title": "经营流程与交接图",
+      "body": {
+        "summary": "从真实任务经过的动作和交接识别等待、返工和断点。",
+        "inputs": [
+          "任务或订单样本",
+          "交接记录"
+        ],
+        "steps": [
+          "追踪一条真实任务，记录输入、动作、输出和时间。",
+          "标注接收标准、负责角色与决策点。",
+          "比较顺畅与阻塞样本，设计局部改进。"
+        ],
+        "outputs": [
+          "现状流程",
+          "断点和改进动作"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:process"
+      ],
+      "limitations": [
+        "流程符合规范不保证业务结果；需区分容量不足与规则问题。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "store-execution",
+        "organization-collaboration",
+        "channel-network"
+      ],
+      "method_type_ids": [
+        "process-mapping"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:UNIT-ECONOMICS",
+      "title": "单位经济性比较",
+      "body": {
+        "summary": "在明确分析单位与时间范围后比较收入、成本和贡献。",
+        "inputs": [
+          "收入、成本与费用明细",
+          "分析范围"
+        ],
+        "steps": [
+          "定义单位、周期与净收入口径。",
+          "拆分变动、固定、分摊与可避免成本。",
+          "比较方案的增量影响及敏感假设。"
+        ],
+        "outputs": [
+          "单位贡献比较",
+          "敏感假设和约束"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:unit-economics"
+      ],
+      "limitations": [
+        "毛利、贡献、利润和现金不同；分摊成本不等于可避免成本。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "pnl-allocation",
+        "channel-network",
+        "merchandise-inventory"
+      ],
+      "method_type_ids": [
+        "unit-economics"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:PNL-BRIDGE",
+      "title": "损益变化桥",
+      "body": {
+        "summary": "按可核对的损益组成解释两期利润变化。",
+        "inputs": [
+          "两期同口径损益数据"
+        ],
+        "steps": [
+          "对齐收入、成本、费用和期间口径。",
+          "计算各组成项对利润变动的算术贡献。",
+          "进一步检查量价、组合和费用机制。"
+        ],
+        "outputs": [
+          "利润变动桥",
+          "机制解释与缺口"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:pnl-bridge"
+      ],
+      "limitations": [
+        "算术贡献不等于因果贡献；细分量价交互项必须说明分摊方式。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "pnl-allocation",
+        "regional-diagnosis"
+      ],
+      "method_type_ids": [
+        "unit-economics",
+        "metric-decomposition"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:INVENTORY-SEGMENT",
+      "title": "商品与供给风险分层",
+      "body": {
+        "summary": "联合需求表现、可售状态和补货约束安排商品动作。",
+        "inputs": [
+          "销售库存与可售记录",
+          "补货周期"
+        ],
+        "steps": [
+          "区分销量、缺货和可售时间。",
+          "按需求稳定性、周转和供应风险分组。",
+          "为分组选择补货、调拨、观察或清理动作。"
+        ],
+        "outputs": [
+          "商品分组",
+          "动作及复查条件"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:inventory-segment"
+      ],
+      "limitations": [
+        "不内置通用安全库存阈值；缺货时销量不能直接代表需求。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "merchandise-inventory"
+      ],
+      "method_type_ids": [
+        "segmentation-comparison",
+        "capacity-allocation"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:CUSTOMER-JOURNEY",
+      "title": "客户任务与触点",
+      "body": {
+        "summary": "围绕客户完成的任务串联触点，定位体验与经营目标的冲突。",
+        "inputs": [
+          "行为或访谈资料",
+          "触点记录"
+        ],
+        "steps": [
+          "定义客户情境与要完成的任务。",
+          "结合行为、访谈和投诉还原触点。",
+          "比较预期体验与实际障碍，验证关键改进。"
+        ],
+        "outputs": [
+          "任务与触点图",
+          "障碍假设及验证"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:customer-journey"
+      ],
+      "limitations": [
+        "访谈样本与回忆偏差须记录；假想客户旅程不能作为真实行为证据。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "customer-membership",
+        "growth-funnel",
+        "strategy-positioning"
+      ],
+      "method_type_ids": [
+        "process-mapping",
+        "segmentation-comparison"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:OPTION-MATRIX",
+      "title": "行动选项比较",
+      "body": {
+        "summary": "围绕同一目标、约束和证据比较行动，保留不确定性。",
+        "inputs": [
+          "目标、约束与候选方案"
+        ],
+        "steps": [
+          "定义决定、约束与不可接受条件。",
+          "列出候选方案的机制、收益、投入和可逆性。",
+          "比较敏感假设，选择先试验还是直接实施。"
+        ],
+        "outputs": [
+          "选项比较",
+          "选择理由和停止条件"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:option-matrix"
+      ],
+      "limitations": [
+        "评分权重是判断，不是事实；不把未经核验的假设包装成精确收益预测。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "strategy-positioning",
+        "channel-network",
+        "pnl-allocation"
+      ],
+      "method_type_ids": [
+        "portfolio-prioritization",
+        "strategy-design"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:CONTROLLED-PILOT",
+      "title": "可比试点验证",
+      "body": {
+        "summary": "在可行范围内构造对照，验证一个明确机制。",
+        "inputs": [
+          "假设与可比样本",
+          "基线和执行数据"
+        ],
+        "steps": [
+          "先定义假设、可观察结果和停止条件。",
+          "选择可比对象与基线，记录分配机制及共同变化。",
+          "同时观察结果、执行程度和副作用，再判断证据强度。"
+        ],
+        "outputs": [
+          "试点设计",
+          "结果与解释强度"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:controlled-pilot"
+      ],
+      "limitations": [
+        "非随机试点仍受选择偏差、季节性和交叉影响限制；不默认改善来自试点。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "store-execution",
+        "growth-funnel",
+        "regional-diagnosis"
+      ],
+      "method_type_ids": [
+        "hypothesis-testing"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:RESPONSIBILITY",
+      "title": "决策与交接责任表",
+      "body": {
+        "summary": "把负责动作、决策权、协作和验收边界连接起来。",
+        "inputs": [
+          "真实流程",
+          "角色与决策权限"
+        ],
+        "steps": [
+          "列出具体动作、决策点与输出。",
+          "确定负责、决策、协作与接收角色。",
+          "核对资源、验收标准和阻塞升级路径。"
+        ],
+        "outputs": [
+          "责任和交接表",
+          "冲突与缺口"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:responsibility"
+      ],
+      "limitations": [
+        "写上负责人不代表获得权限、资源或承诺；需核实实际可执行性。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "organization-collaboration",
+        "store-execution"
+      ],
+      "method_type_ids": [
+        "relationship-mapping",
+        "process-mapping"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    },
+    {
+      "id": "GEN:REVIEW-LOOP",
+      "title": "行动复盘闭环",
+      "body": {
+        "summary": "将预期机制与实际证据对照，保留支持、反证与判断变化。",
+        "inputs": [
+          "行动日志",
+          "结果与环境变化"
+        ],
+        "steps": [
+          "记录目标、基线、预期机制和采取的动作。",
+          "对照实际结果及同期其他变化。",
+          "更新解释，决定保留、修改或停止，并记录下一步。"
+        ],
+        "outputs": [
+          "复盘记录",
+          "判断修订与下一步"
+        ],
+        "provenance": {
+          "kind": "generic_example",
+          "note": "为本产品原创撰写的通用方法说明，仅用于空库体验；不是用户材料的蒸馏或已核实业务事实。"
+        }
+      },
+      "source": {
+        "document": "通用经营方法示例（原创说明）",
+        "page_numbers": []
+      },
+      "family_ids": [
+        "generic:review-loop"
+      ],
+      "limitations": [
+        "未执行的动作和未发生的结果不记为成果；复盘叙事不能替代证据。",
+        "应用需结合当前业务资料和口径验证。"
+      ],
+      "scenario_ids": [
+        "metrics-review",
+        "store-execution",
+        "organization-collaboration"
+      ],
+      "method_type_ids": [
+        "feedback-review",
+        "hypothesis-testing"
+      ],
+      "management_levels": [
+        "store",
+        "region",
+        "headquarters"
+      ]
+    }
+  ]
+}

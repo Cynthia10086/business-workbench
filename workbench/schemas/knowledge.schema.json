@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:business-reasoning:knowledge:v1",
+  "title": "可移植经营方法知识包",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "body",
+          "source",
+          "family_ids",
+          "limitations",
+          "scenario_ids",
+          "method_type_ids",
+          "management_levels"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "body": {
+            "type": [
+              "string",
+              "object"
+            ]
+          },
+          "source": {
+            "type": "object",
+            "required": [
+              "document",
+              "page_numbers"
+            ],
+            "properties": {
+              "document": {
+                "type": "string",
+                "minLength": 1
+              },
+              "page_numbers": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "locator": {
+                "type": "string"
+              }
+            }
+          },
+          "family_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "scenario_ids": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "strategy-positioning",
+                "growth-funnel",
+                "merchandise-inventory",
+                "channel-network",
+                "store-execution",
+                "customer-membership",
+                "organization-collaboration",
+                "regional-diagnosis",
+                "pnl-allocation",
+                "metrics-review"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "method_type_ids": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "strategy-design",
+                "metric-decomposition",
+                "segmentation-comparison",
+                "process-mapping",
+                "portfolio-prioritization",
+                "unit-economics",
+                "hypothesis-testing",
+                "feedback-review",
+                "relationship-mapping",
+                "capacity-allocation"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "management_levels": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "store",
+                "region",
+                "headquarters"
+              ]
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

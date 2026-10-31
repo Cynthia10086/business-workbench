@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0",
+  "description": "导航分类用于选择问题与方法，不是原资料的权威分类，也不表示因果关系。三个轴可交叉、多选。",
+  "scenario_groups": [
+    {
+      "id": "direction",
+      "label": "方向与增长"
+    },
+    {
+      "id": "operations",
+      "label": "经营与执行"
+    },
+    {
+      "id": "management",
+      "label": "管理与复盘"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "strategy-positioning",
+      "label": "策略与定位",
+      "parent_id": "direction",
+      "trigger_question": "增长机会很多，但应该服务谁、放弃什么、靠什么赢？",
+      "method_type_ids": [
+        "strategy-design",
+        "segmentation-comparison",
+        "portfolio-prioritization"
+      ],
+      "reference": "scenarios/strategy-positioning.md"
+    },
+    {
+      "id": "growth-funnel",
+      "label": "增长与漏斗",
+      "parent_id": "direction",
+      "trigger_question": "销售或转化变差，损失主要发生在哪个环节？",
+      "method_type_ids": [
+        "metric-decomposition",
+        "process-mapping",
+        "hypothesis-testing"
+      ],
+      "reference": "scenarios/growth-funnel.md"
+    },
+    {
+      "id": "merchandise-inventory",
+      "label": "商品与库存",
+      "parent_id": "operations",
+      "trigger_question": "一边缺货一边积压，应该调整哪些商品与补货动作？",
+      "method_type_ids": [
+        "segmentation-comparison",
+        "capacity-allocation",
+        "unit-economics"
+      ],
+      "reference": "scenarios/merchandise-inventory.md"
+    },
+    {
+      "id": "channel-network",
+      "label": "渠道与网络",
+      "parent_id": "operations",
+      "trigger_question": "渠道贡献、覆盖与成本是否匹配，网点应该如何调整？",
+      "method_type_ids": [
+        "relationship-mapping",
+        "unit-economics",
+        "portfolio-prioritization"
+      ],
+      "reference": "scenarios/channel-network.md"
+    },
+    {
+      "id": "store-execution",
+      "label": "门店执行",
+      "parent_id": "operations",
+      "trigger_question": "同样的策略在不同门店为何出现执行差异？",
+      "method_type_ids": [
+        "process-mapping",
+        "hypothesis-testing",
+        "feedback-review"
+      ],
+      "reference": "scenarios/store-execution.md"
+    },
+    {
+      "id": "customer-membership",
+      "label": "客户与会员",
+      "parent_id": "direction",
+      "trigger_question": "复购、留存或会员活跃变化，是哪类客户与触点的问题？",
+      "method_type_ids": [
+        "segmentation-comparison",
+        "process-mapping",
+        "hypothesis-testing"
+      ],
+      "reference": "scenarios/customer-membership.md"
+    },
+    {
+      "id": "organization-collaboration",
+      "label": "组织与协同",
+      "parent_id": "management",
+      "trigger_question": "跨团队交接反复、责任不清，问题卡在哪个决策或动作？",
+      "method_type_ids": [
+        "process-mapping",
+        "relationship-mapping",
+        "capacity-allocation"
+      ],
+      "reference": "scenarios/organization-collaboration.md"
+    },
+    {
+      "id": "regional-diagnosis",
+      "label": "区域诊断",
+      "parent_id": "management",
+      "trigger_question": "区域总体变化由哪些城市、门店、商品或客群驱动？",
+      "method_type_ids": [
+        "metric-decomposition",
+        "segmentation-comparison",
+        "hypothesis-testing"
+      ],
+      "reference": "scenarios/regional-diagnosis.md"
+    },
+    {
+      "id": "pnl-allocation",
+      "label": "损益与资源配置",
+      "parent_id": "management",
+      "trigger_question": "收入增长但利润承压，哪些投入值得保留或重新分配？",
+      "method_type_ids": [
+        "unit-economics",
+        "metric-decomposition",
+        "portfolio-prioritization"
+      ],
+      "reference": "scenarios/pnl-allocation.md"
+    },
+    {
+      "id": "metrics-review",
+      "label": "指标与复盘",
+      "parent_id": "management",
+      "trigger_question": "如何把目标拆到可观察的指标，并将结果反哺下一轮行动？",
+      "method_type_ids": [
+        "metric-decomposition",
+        "feedback-review",
+        "hypothesis-testing"
+      ],
+      "reference": "scenarios/metrics-review.md"
+    }
+  ],
+  "method_types": [
+    {
+      "id": "strategy-design",
+      "label": "策略设计",
+      "description": "明确选择、价值主张与不做什么；适合方向性决策。"
+    },
+    {
+      "id": "metric-decomposition",
+      "label": "指标拆解",
+      "description": "将可核对的总量分解为组成项或驱动因子，保持口径一致。"
+    },
+    {
+      "id": "segmentation-comparison",
+      "label": "分群与对照",
+      "description": "按客户、商品、门店或时间分组比较，检查样本组成差异。"
+    },
+    {
+      "id": "process-mapping",
+      "label": "流程与触点",
+      "description": "将输入、动作、交接和输出串联，找到可观察的断点。"
+    },
+    {
+      "id": "portfolio-prioritization",
+      "label": "组合与优先级",
+      "description": "在明确目标和约束下比较选项，避免用总分掩盖关键风险。"
+    },
+    {
+      "id": "unit-economics",
+      "label": "单位经济与损益",
+      "description": "区分收入、成本、费用、现金和分摊口径，分析经济性。"
+    },
+    {
+      "id": "hypothesis-testing",
+      "label": "竞争假设与验证",
+      "description": "提出可被推翻的解释，寻找区分解释的证据或小实验。"
+    },
+    {
+      "id": "feedback-review",
+      "label": "复盘与闭环",
+      "description": "比较计划、实际和预期机制，记录偏差、变化与后续行动。"
+    },
+    {
+      "id": "relationship-mapping",
+      "label": "关系与系统",
+      "description": "标明实体、依赖、影响方向及未知关系；不把连线当成因果证明。"
+    },
+    {
+      "id": "capacity-allocation",
+      "label": "能力与资源配置",
+      "description": "结合需求、瓶颈、服务标准与容量约束，安排资源及动作。"
+    }
+  ],
+  "management_levels": [
+    {
+      "id": "store",
+      "label": "门店",
+      "focus": "当期经营与执行：客户、商品、人员、流程和现场反馈。"
+    },
+    {
+      "id": "region",
+      "label": "区域",
+      "focus": "同口径跨店比较、区域资源配置、经验迁移与异常排查。"
+    },
+    {
+      "id": "headquarters",
+      "label": "总部与中台",
+      "focus": "策略、规则、组合配置、损益口径和跨部门协同。"
+    }
+  ],
+  "classification_rules": [
+    "以材料帮助解决的业务决定标注场景，不只看标题关键词。",
+    "方法类型标注其推理或操作方式；管理层级标注适用的决策范围，允许多个。",
+    "仅凭目录或摘要得出的标签标记为候选；阅读完整材料后再确认。",
+    "无可靠依据时保留未分类，不为凑齐覆盖而生成不存在的模型或关系。",
+    "场景编号及关系属于产品导航元数据，不能替代原始来源和原文。"
+  ]
+}
